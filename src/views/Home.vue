@@ -4,8 +4,8 @@
     <card
       title="mon title"
       content="content"
-      modifier="big"
-      :tagHtml="{container: 'nav', title: 'h1'}"
+      :modifiers="['big', 'red']"
+      :tagHtml="{container: 'div', title: 'h3'}"
     />
   </div>
 </template>
