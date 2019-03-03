@@ -23,3 +23,22 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("checkNavLink", (link) => {
+  const currentRouteClass = 'router-link-exact-active router-link-active'
+  let conditionClass = link.isActive ? 'have.class' : 'not.have.class'
+
+  let expectation =
+    cy.get(link.selector)
+      .should('contain', link.text)
+      .and('have.attr', 'href', link.url)
+
+  return expectation.and(conditionClass, currentRouteClass)
+})
+
+Cypress.Commands.add("checkNavLinkLength", (links, nbLinks) => {
+  cy.get(links)
+    .should(($links) => 
+      expect($links, `${nbLinks} links`).to.have.length(nbLinks)
+    )
+})
