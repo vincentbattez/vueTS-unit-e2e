@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div class="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <router-link
+        v-if="this.$router.history.current.name === 'about'"
+        to="/secret"
+      >
+        Secret link
+      </router-link>
     </div>
     <router-view/>
   </div>

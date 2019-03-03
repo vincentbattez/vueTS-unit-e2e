@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png" class="logo">
     <card
       title="mon title"
       content="content"
@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Card from '@/components/Card.vue'; // @ is an alias to /src
+import Card from '@/components/Card/Card.vue';
 
 @Component({
   components: {
